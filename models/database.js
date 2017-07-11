@@ -1,9 +1,6 @@
 const pg = require('pg');
-//credentials of postgre
-//username : postgres
-//password:root
-const connectionString = process.env.DATABASE_URL || 'postgres://postgres:root@localhost:5432/todo'; 
-
+var config = require(__dirname + '/../config.js')
+const connectionString = config.connectionString;
 const client = new pg.Client(connectionString);
 client.connect();
 const query = client.query(

@@ -1,9 +1,10 @@
 var swaggerJSDoc = require('swagger-jsdoc');
 var express = require('express');
 var router = express.Router();
+var config = require(__dirname + '/../config.js')
 const pg = require('pg');
 const path = require('path');
-const connectionString = process.env.DATABASE_URL || 'postgres://postgres:root@localhost:5432/todo';
+const connectionString = config.connectionString;
 // swagger definition
 var swaggerDefinition = {
   info: {
