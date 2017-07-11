@@ -5,6 +5,10 @@ var config = require(__dirname + '/../config.js')
 const pg = require('pg');
 const path = require('path');
 const connectionString = config.connectionString;
+
+router.get('/',(req,res,next)=>{
+  res.send("Welcome to todo API");
+});
 // swagger definition
 var swaggerDefinition = {
   info: {
